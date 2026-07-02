@@ -1,2 +1,2 @@
 # bob
-Remember @savir, this isn't bob the builder. 😂😂😂
+Remember, this isn't bob the builder. 😂😂😂
