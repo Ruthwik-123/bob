@@ -1,0 +1,264 @@
+{
+  "values": {
+    "currency": {
+      "name": "coins"
+    },
+    "accounts": {
+      "starting_wallet": 0,
+      "starting_bank": 0
+    },
+    "daily": {
+      "cooldown_hours": 24,
+      "min_reward": 10,
+      "max_reward": 1000
+    },
+    "weekly": {
+      "cooldown_days": 7,
+      "min_reward": 100,
+      "max_reward": 2500
+    },
+    "beg": {
+      "win_chance": 0.1,
+      "min_reward": 10,
+      "max_reward": 25
+    },
+    "gambling": {
+      "min_bet": 1,
+      "coinflip_profit_multiplier": 1,
+      "dice_payout_multiplier": 6
+    },
+    "pay": {
+      "tax_threshold": 10000,
+      "low_tax_rate": 0.025,
+      "high_tax_rate": 0.09
+    },
+    "loan": {
+      "term_days": 30,
+      "total_interest_rate": 0.25,
+      "installment_principal_rate": 0.1,
+      "installment_interest_rate": 0.025,
+      "round_due_to_next_hour": true,
+      "snatch_bank_first": true,
+      "allow_negative_wallet_on_snatch": true
+    },
+    "leaderboard": {
+      "limit": 10
+    },
+    "stock_market": {
+      "stock_key": "folks",
+      "display_name": "Folks",
+      "starting_price": 100,
+      "min_price": 1,
+      "update_interval_seconds": 60,
+      "min_percent_change": -8.0,
+      "max_percent_change": 8.0
+    },
+    "transactions": {
+      "enabled": true,
+      "directory": "data/transactions",
+      "max_part_size_bytes": 9500000,
+      "max_parts": 25,
+      "history_command_lines": 10
+    },
+    "work": {
+      "jobs_category_name": "JOBS",
+      "create_category_if_missing": true,
+      "selection_timeout_seconds": 180,
+      "task_timeout_seconds": 180,
+      "delete_channel_after_seconds": 30,
+      "jobs": {
+        "data_entry": {
+          "label": "Data Entry",
+          "description": "Sort a scrambled list into alphabetical order.",
+          "min_reward": 250,
+          "max_reward": 650,
+          "min_account_age_days": 0,
+          "required_role_names": []
+        },
+        "quality_control": {
+          "label": "Quality Control",
+          "description": "Find the incorrect word or typo in a text block.",
+          "min_reward": 300,
+          "max_reward": 750,
+          "min_account_age_days": 0,
+          "required_role_names": []
+        },
+        "logistics": {
+          "label": "Logistics",
+          "description": "Match items to their correct categories.",
+          "min_reward": 350,
+          "max_reward": 850,
+          "min_account_age_days": 0,
+          "required_role_names": []
+        }
+      }
+    },
+    "emojis": {
+      "coin_emoji": ":coin:",
+      "wave_emoji": ":wave:",
+      "chart_up_emoji": ":chart_with_upwards_trend:",
+      "chart_down_emoji": ":chart_with_downwards_trend:",
+      "trophy_emoji": ":trophy:",
+      "bank_emoji": ":bank:",
+      "scroll_emoji": ":scroll:",
+      "briefcase_emoji": ":briefcase:",
+      "success_emoji": ":white_check_mark:",
+      "failure_emoji": ":x:",
+      "dice_emoji": ":game_die:",
+      "money_bag_emoji": ":moneybag:"
+    },
+    "localization": {
+      "transaction_actions": {
+        "create_account": "created an economy account",
+        "daily": "claimed a daily reward of {amount} {currency}",
+        "weekly": "claimed a weekly reward of {amount} {currency}",
+        "beg": "begged and received {amount} {currency}",
+        "deposit": "deposited {amount} {currency} into the bank",
+        "withdraw": "withdrew {amount} {currency} from the bank",
+        "coinflip": "flipped a coin and changed their wallet by {amount} {currency}",
+        "dice": "rolled dice and changed their wallet by {amount} {currency}",
+        "pay_sent": "paid another user {amount_abs} {currency}",
+        "pay_received": "received {amount} {currency} from another user",
+        "loan_borrow": "borrowed {amount} {currency} as a loan",
+        "loan_payment": "made a loan payment of {amount_abs} {currency}",
+        "loan_snatch": "had an overdue loan snatched for {amount_abs} {currency}",
+        "stock_buy": "bought Folks stock for {amount_abs} {currency}",
+        "stock_sell": "sold Folks stock for {amount} {currency}",
+        "work": "completed work and earned {amount} {currency}"
+      },
+      "transaction_unknown_action": "made an economy transaction of {amount} {currency}",
+      "transaction_line_format": "[{timestamp}] {user} {action} (Wallet: {wallet} | Bank: {bank})"
+    }
+  },
+  "descriptions": {
+    "currency": {
+      "name": "Human-readable currency name used in plain English transaction files. Cosmetic only."
+    },
+    "accounts": {
+      "starting_wallet": "Wallet balance assigned to newly created accounts. Increase for a starter bonus.",
+      "starting_bank": "Bank balance assigned to newly created accounts. Increase for a protected starter bonus."
+    },
+    "daily": {
+      "cooldown_hours": "Hours users must wait between daily claims. Lower values give currency faster.",
+      "min_reward": "Smallest possible daily reward. Must be <= max_reward.",
+      "max_reward": "Largest possible daily reward. Raising this inflates the economy."
+    },
+    "weekly": {
+      "cooldown_days": "Days users must wait between weekly claims.",
+      "min_reward": "Smallest possible weekly reward. Must be <= max_reward.",
+      "max_reward": "Largest possible weekly reward. Raising this inflates the economy."
+    },
+    "beg": {
+      "win_chance": "Probability from 0.0 to 1.0 that beg succeeds. Example: 0.1 is 10%.",
+      "min_reward": "Smallest beg success reward.",
+      "max_reward": "Largest beg success reward."
+    },
+    "gambling": {
+      "min_bet": "Minimum wager accepted by gambling commands.",
+      "coinflip_profit_multiplier": "Profit multiplier when coinflip wins. 1 means a 100 bet pays 100 profit and returns the original through unchanged balance math.",
+      "dice_payout_multiplier": "Total payout multiplier for an exact dice guess. 6 means a 100 bet returns 600 total / 500 profit."
+    },
+    "pay": {
+      "tax_threshold": "Payment amount where high tax starts. Amounts below use low_tax_rate; amounts at/above use high_tax_rate.",
+      "low_tax_rate": "Transfer tax below threshold. 0.025 is 2.5%.",
+      "high_tax_rate": "Transfer tax at/above threshold. 0.09 is 9%."
+    },
+    "loan": {
+      "term_days": "Number of days before unpaid loans are forcibly collected.",
+      "total_interest_rate": "Total interest added to borrowed amount. 0.25 means repay 125% total.",
+      "installment_principal_rate": "Portion of original principal charged per pay_loan installment.",
+      "installment_interest_rate": "Interest portion of original principal charged per pay_loan installment.",
+      "round_due_to_next_hour": "If true, due dates round up to the next full UTC hour for readability.",
+      "snatch_bank_first": "If true, overdue collection takes bank funds before wallet funds.",
+      "allow_negative_wallet_on_snatch": "If true, overdue collection can push wallet below zero."
+    },
+    "leaderboard": {
+      "limit": "Number of users displayed on the leaderboard. Discord embeds work best at 10 or fewer."
+    },
+    "stock_market": {
+      "stock_key": "Internal JSON key for the fictional stock. Changing after launch can orphan old holdings.",
+      "display_name": "Public stock name shown to users.",
+      "starting_price": "Initial price when a server market is created.",
+      "min_price": "Lowest allowed stock price.",
+      "update_interval_seconds": "Minimum seconds between random price updates.",
+      "min_percent_change": "Lowest random percentage movement per update. Negative values allow drops.",
+      "max_percent_change": "Highest random percentage movement per update. Positive values allow gains."
+    },
+    "transactions": {
+      "enabled": "Master switch for compact transaction .txt logging.",
+      "directory": "Folder where transaction part files are stored.",
+      "max_part_size_bytes": "Maximum raw text size before rolling part 1 to part 2. 9500000 is 9.5 MB.",
+      "max_parts": "Maximum transaction parts retained per guild before oldest is deleted.",
+      "history_command_lines": "Number of recent compact log lines shown by the transaction command."
+    },
+    "work": {
+      "jobs_category_name": "Existing category where private job channels are created. If missing, create_category_if_missing controls behavior.",
+      "create_category_if_missing": "If true, bot creates the jobs category when it cannot find it.",
+      "selection_timeout_seconds": "How long the dropdown remains usable.",
+      "task_timeout_seconds": "How long a user has to solve a private job task.",
+      "delete_channel_after_seconds": "Delay before completed/failed job channels are deleted.",
+      "jobs": {
+        "data_entry": {
+          "label": "Dropdown label for this job.",
+          "description": "Dropdown description for this job.",
+          "min_reward": "Minimum reward for completing this job.",
+          "max_reward": "Maximum reward for completing this job.",
+          "min_account_age_days": "Minimum Discord account age required. 0 disables age gating.",
+          "required_role_names": "List of role names required for this job. Empty list means everyone can select it."
+        },
+        "quality_control": {
+          "label": "Dropdown label for this job.",
+          "description": "Dropdown description for this job.",
+          "min_reward": "Minimum reward for completing this job.",
+          "max_reward": "Maximum reward for completing this job.",
+          "min_account_age_days": "Minimum Discord account age required. 0 disables age gating.",
+          "required_role_names": "List of role names required for this job. Empty list means everyone can select it."
+        },
+        "logistics": {
+          "label": "Dropdown label for this job.",
+          "description": "Dropdown description for this job.",
+          "min_reward": "Minimum reward for completing this job.",
+          "max_reward": "Maximum reward for completing this job.",
+          "min_account_age_days": "Minimum Discord account age required. 0 disables age gating.",
+          "required_role_names": "List of role names required for this job. Empty list means everyone can select it."
+        }
+      }
+    },
+    "emojis": {
+      "coin_emoji": "Discord colon-code emoji string used by bot responses. Use official Discord format like :coin:, not raw Unicode.",
+      "wave_emoji": "Discord colon-code emoji string used by bot responses. Use official Discord format like :coin:, not raw Unicode.",
+      "chart_up_emoji": "Discord colon-code emoji string used by bot responses. Use official Discord format like :coin:, not raw Unicode.",
+      "chart_down_emoji": "Discord colon-code emoji string used by bot responses. Use official Discord format like :coin:, not raw Unicode.",
+      "trophy_emoji": "Discord colon-code emoji string used by bot responses. Use official Discord format like :coin:, not raw Unicode.",
+      "bank_emoji": "Discord colon-code emoji string used by bot responses. Use official Discord format like :coin:, not raw Unicode.",
+      "scroll_emoji": "Discord colon-code emoji string used by bot responses. Use official Discord format like :coin:, not raw Unicode.",
+      "briefcase_emoji": "Discord colon-code emoji string used by bot responses. Use official Discord format like :coin:, not raw Unicode.",
+      "success_emoji": "Discord colon-code emoji string used by bot responses. Use official Discord format like :coin:, not raw Unicode.",
+      "failure_emoji": "Discord colon-code emoji string used by bot responses. Use official Discord format like :coin:, not raw Unicode.",
+      "dice_emoji": "Discord colon-code emoji string used by bot responses. Use official Discord format like :coin:, not raw Unicode.",
+      "money_bag_emoji": "Discord colon-code emoji string used by bot responses. Use official Discord format like :coin:, not raw Unicode."
+    },
+    "localization": {
+      "transaction_actions": {
+        "create_account": "Plain-English phrase used when formatting raw transaction action `create_account`. Supports placeholders like {amount}, {amount_abs}, and {currency}.",
+        "daily": "Plain-English phrase used when formatting raw transaction action `daily`. Supports placeholders like {amount}, {amount_abs}, and {currency}.",
+        "weekly": "Plain-English phrase used when formatting raw transaction action `weekly`. Supports placeholders like {amount}, {amount_abs}, and {currency}.",
+        "beg": "Plain-English phrase used when formatting raw transaction action `beg`. Supports placeholders like {amount}, {amount_abs}, and {currency}.",
+        "deposit": "Plain-English phrase used when formatting raw transaction action `deposit`. Supports placeholders like {amount}, {amount_abs}, and {currency}.",
+        "withdraw": "Plain-English phrase used when formatting raw transaction action `withdraw`. Supports placeholders like {amount}, {amount_abs}, and {currency}.",
+        "coinflip": "Plain-English phrase used when formatting raw transaction action `coinflip`. Supports placeholders like {amount}, {amount_abs}, and {currency}.",
+        "dice": "Plain-English phrase used when formatting raw transaction action `dice`. Supports placeholders like {amount}, {amount_abs}, and {currency}.",
+        "pay_sent": "Plain-English phrase used when formatting raw transaction action `pay_sent`. Supports placeholders like {amount}, {amount_abs}, and {currency}.",
+        "pay_received": "Plain-English phrase used when formatting raw transaction action `pay_received`. Supports placeholders like {amount}, {amount_abs}, and {currency}.",
+        "loan_borrow": "Plain-English phrase used when formatting raw transaction action `loan_borrow`. Supports placeholders like {amount}, {amount_abs}, and {currency}.",
+        "loan_payment": "Plain-English phrase used when formatting raw transaction action `loan_payment`. Supports placeholders like {amount}, {amount_abs}, and {currency}.",
+        "loan_snatch": "Plain-English phrase used when formatting raw transaction action `loan_snatch`. Supports placeholders like {amount}, {amount_abs}, and {currency}.",
+        "stock_buy": "Plain-English phrase used when formatting raw transaction action `stock_buy`. Supports placeholders like {amount}, {amount_abs}, and {currency}.",
+        "stock_sell": "Plain-English phrase used when formatting raw transaction action `stock_sell`. Supports placeholders like {amount}, {amount_abs}, and {currency}.",
+        "work": "Plain-English phrase used when formatting raw transaction action `work`. Supports placeholders like {amount}, {amount_abs}, and {currency}."
+      },
+      "transaction_unknown_action": "Fallback phrase used for any raw action key not listed in transaction_actions.",
+      "transaction_line_format": "Final readable transaction line wrapper. Controls timestamp/user/action/balance layout. Supports {timestamp}, {user}, {action}, {wallet}, and {bank}."
+    }
+  }
+}
